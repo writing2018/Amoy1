@@ -1,0 +1,68 @@
+@import "./base.less";
+
+body {
+  background-color: #c9c9c9;
+}
+
+html,body {
+    height: 100%;
+}
+
+// 中间区域
+#main {
+  display: flex;
+  height: 100%;
+
+  //   左侧分类
+  .category-left {
+    width: 80px;
+    ul {
+        background-color: #fff;
+      li {
+        &.active {
+          > a {
+            background-color: #c9c9c9;
+          }
+        }
+
+        a {
+          border-bottom: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          display: block;
+          height: 45px;
+          text-align: center;
+          line-height: 45px;
+          color: #333;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  //   右侧商品
+  .category-right {
+    flex: 1;
+    position: relative;
+    height: 100%;
+
+    .mui-scroll {
+      padding: 10px;
+      min-height: 101%;
+
+      .mui-row {
+        background-color: #fff;
+        > div {
+          > a {
+            display: block;
+            img {
+              width: 100%;
+            }
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,21 +1,71 @@
-@headColor: #006699;
+@import "./base.less";
 
-#header {
-    height: 45px;
-    background-color: @headColor;
-    
-    h4 {
-        margin: 0;
-        color: #fff;
-        text-align: center;
-        line-height: 45px;
-        font-weight: normal;
+
+  // 3.导航区域
+  #nav {
+    padding: 10px;
+    .mui-row {
+      > div {
+        > a {
+          > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // 4.广告区域
+  #banner {
+    padding: 0 10px;
+    border-top: 1px solid #ccc;
+
+    .mui-row {
+      > div {
+        a {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // 5.品牌区域
+  #brand {
+    padding: 0 10px;
+    // 头部图片
+    .title {
+      img {
+        width: 100%;
+      }
+    }
+    // 内容图片
+    .content {
+      > div {
+        a {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // 6.运动专区  女士专区  男士专区
+  #sport,
+  #woman,
+  #man {
+    padding: 0 10px;
+
+    // 头部图片
+    .title {
+      img {
+        width: 100%;
+      }
     }
 
-    .fa-search {
-        color: #fff;
-        position: absolute;
-        right: 15px;
-        top: 15px;
-    }
-}
+
+  }
+
+

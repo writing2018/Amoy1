@@ -1,0 +1,134 @@
+// 主体颜色
+@headColor: #006699;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  // 去除图片底部3px的间距
+  vertical-align: middle;
+}
+
+// body背景颜色
+body {
+  background-color: #fff;
+}
+
+// 头部区域
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  z-index: 999;
+  height: 45px;
+  background-color: @headColor;
+
+  h4 {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-weight: normal;
+  }
+
+  .fa-search {
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .fa-arrow-left {
+    color: #fff;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+
+  .search-form {
+    padding: 5px 45px;
+
+    >input {
+      background-color: #fff;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 2.中间主体部分
+#main {
+  padding: 45px 0;
+}
+
+// 商品区域
+.wares {
+  .product {
+    padding: 5px;
+
+    .box {
+      box-shadow: 0px 0px 5px #ccc;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        padding: 0 10px;
+      }
+
+      .product-name {
+        color: #8f8f94;
+      }
+
+      .product-price {
+        .new-price {
+          color: red;
+          margin-right: 5px;
+        }
+      }
+
+      .mui-btn {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// 9.底部导航
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 45px;
+  background-color: @headColor;
+
+  > div {
+    a {
+      display: block;
+      color: #fff;
+      padding-top: 5px;
+      text-align: center;
+      font-size: 16px;
+
+      span {
+        display: block;
+
+        &:nth-child(2) {
+          margin-top: 2px;
+        }
+      }
+    }
+    a.active {
+      color: orange;
+    }
+  }
+}

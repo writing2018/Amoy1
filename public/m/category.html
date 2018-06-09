@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的分类</title>
+
+    <!-- 引入站点图标，rel里面要是icon表示引入文件是一个图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入分类的less文件 -->
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- 引入less.js编译器文件 -->
+    <script src="./lib/less/less.js"></script>
+
+</head>
+
+<body>
+    <!-- 1.头部区域 -->
+    <header id="header">
+        <a href="#" class="fa fa-arrow-left" aria-hidden="true"></a>
+        <form action="#" class="search-form">
+            <input type="search" placeholder="请输入你要搜索的商品">
+        </form>
+        <a href="#" class="fa fa-search" aria-hidden="true"></a>
+    </header>
+
+    <!-- 中间区域 -->
+    <main id="main">
+        <!-- 左侧分类 -->
+        <div class="category-left">
+            <ul>
+
+            </ul>
+        </div>
+
+        <!-- 右侧商品 -->
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 9.底部导航 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <a href="index.html" class="mui-col-xs-3 active">
+                <span class="fa fa-home"></span>
+                <span>首页</span>
+            </a>
+            <a href="./category.html" class="mui-col-xs-3">
+                <span class="fa fa-bars"></span>
+                <span>分类</span>
+            </a>
+            <a href="cart.html" class="mui-col-xs-3">
+                <span class="fa fa-shopping-cart"></span>
+                <span>购物车</span>
+            </a>
+            <a href="user.html" class="mui-col-xs-3">
+                <span class="fa fa-user"></span>
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 定义左侧分类的模板，给模板起一个id -->
+    <script id="CategoryLeftTmp" type="text/html">
+        {{each rows as value i}}
+            <li class="{{i == 0 ? 'active' : ''}}">
+                <!-- 渲染左侧的分类时把id保存在它的身上 -->
+                <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
+            </li>
+        {{/each}}
+    </script>
+
+    <!-- 定义右侧的模板 -->
+    <script id="CategoryRightTmp" type="text/html">
+        {{each rows as value i}}
+            <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{value.brandLogo}}" alt="">
+                    <p>{{value.brandName}}</p>
+                </a>
+            </div>
+        {{/each}}
+    </script>
+    <!-- 引入mui.js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto.sj文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎的js文件 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入分类的js文件 -->
+    <script src="./js/category.js"></script>
+</body>
+
+</html>
