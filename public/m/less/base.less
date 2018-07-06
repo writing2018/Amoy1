@@ -35,7 +35,7 @@ body {
     font-weight: normal;
   }
 
-  .fa-search {
+  .fa-search, .fa-home {
     color: #fff;
     position: absolute;
     right: 15px;
@@ -64,6 +64,31 @@ body {
 // 2.中间主体部分
 #main {
   padding: 45px 0;
+}
+
+//搜索框区域
+.search-form {
+  position: relative;
+  padding: 10px 60px 10px 10px;
+
+  .btn-input {
+    border: 1px solid #006699;
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  .btn-search {
+    border-radius: 0px 5px 5px 0px;
+    display: block;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #006699;
+    border: 1px solid #006699;
+  }
 }
 
 // 商品区域

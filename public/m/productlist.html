@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索界面</title>
+
+    <!-- 引入站点图标，rel里面要是icon表示引入文件是一个图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入分类的less文件 -->
+    <link rel="stylesheet/less" href="./less/productlist.less">
+    <!-- 引入less.js编译器文件 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 1.头部区域 -->
+    <header id="header">
+        <a href="#" class="fa fa-arrow-left" aria-hidden="true"></a>
+        <h4>搜索中心</h4>
+    </header>
+
+    <!-- 页面主体部分 -->
+    <main id="main">
+        <div class="container">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 搜索框区域 -->
+                    <form action="#" class="search-form">
+                        <input class="btn-input" type="text" placeholder="搜索你喜欢的商品">
+                        <a href="#" class="mui-btn mui-btn-primary btn-search">搜索</a>
+                    </form>
+
+                    <!-- 筛选区域 -->
+                    <div class="screen">
+                        <div class="mui-row">
+                            <a href="#" class="mui-col-xs-3">
+                                <span>上架时间</span>
+                                <span class="fa fa-chevron-down"></span>
+                            </a>
+                            <a href="#" class="mui-col-xs-3" data-sort-type="price" data-sort="1">
+                                <span>价格</span>
+                                <span class="fa fa-chevron-down"></span>
+                            </a>
+                            <a href="#" class="mui-col-xs-3" data-sort-type="num" data-sort="1">
+                                <span>销量</span>
+                                <span class="fa fa-chevron-down"></span>
+                            </a>
+                            <a href="#" class="mui-col-xs-3">
+                                <span>折扣</span>
+                                <span class="fa fa-chevron-down"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 商品区域 -->
+                    <div class="wares mui-row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- 9.底部导航 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <a href="index.html" class="mui-col-xs-3 active">
+                <span class="fa fa-home"></span>
+                <span>首页</span>
+            </a>
+            <a href="./category.html" class="mui-col-xs-3">
+                <span class="fa fa-bars"></span>
+                <span>分类</span>
+            </a>
+            <a href="cart.html" class="mui-col-xs-3">
+                <span class="fa fa-shopping-cart"></span>
+                <span>购物车</span>
+            </a>
+            <a href="user.html" class="mui-col-xs-3">
+                <span class="fa fa-user"></span>
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 定义模板 -->
+    <script id="productlistTmp" type="text/html">
+        {{each data as value i}}
+            <a href="./detail.html?productid={{value.id}}" class="product mui-col-xs-6">
+                <div class="box">
+                    <img class="product-img" src="{{value.pic[0].picAddr}}" alt="">
+                    <p class="product-name">{{value.proName}}</p>
+                    <p class="product-price">
+                        <span class="new-price">¥{{value.price}}</span>
+                        <del class="old-price">¥{{value.oldPrice}}</del>
+                    </p>
+                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                </div>
+            </a>
+        {{/each}}
+    </script>
+
+    <!-- 引入mui.js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto.sj文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎的js文件 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入分类的js文件 -->
+    <script src="./js/productlist.js"></script>
+</body>
+
+</html>

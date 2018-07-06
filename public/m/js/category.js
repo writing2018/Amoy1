@@ -57,7 +57,7 @@ Letao.prototype = {
         getRightData(1);
 
         // 给左侧分类添加点击事件，获取右侧数据
-        $('.category-left ul').on('click', function (e) {
+        $('.category-left ul').on('click','a', function (e) {
             // 给当前的li添加active 删除所有li的active
             $(e.target.parentNode).addClass('active').siblings().removeClass('active');;
 
